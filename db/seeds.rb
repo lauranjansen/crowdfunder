@@ -29,12 +29,19 @@ puts "\nCreating projects..."
 end
 
 puts "\nCreating rewards..."
-10.times do
-  Reward.create!(
-    title: Faker::Hacker.noun,
-    description: Faker::Hacker.say_something_smart,
-    amount: 10 + rand(1000),
-    project_id: Project.all.sample.id,
-  )
-  print "|"
+
+projects = Project.all
+projects.each do |project|
+  reward_amount = 10
+  5.times do
+    Reward.create!(
+      title: Faker::Hacker.noun,
+      description: Faker::Hacker.say_something_smart,
+      amount: 10 + reward_amount,
+      project_id: project.id,
+    )
+    print "|"
+
+    reward_amount = reward_amount * 2
+  end
 end
