@@ -14,5 +14,17 @@
 		<br>
 	</p>
 
-
 <% end %>
+ 
+<%= # link_to "Login", new_session_path %>
+ 
+<% if current_user %>
+	<%= link_to "My Profile",  %>
+	<%= link_to "Create a Project", new_project_path %>
+<% else %>
+<p>Please <%= link_to "log in", new_session_path %>.</p> 
+<% end %> 
+
+
+
+
