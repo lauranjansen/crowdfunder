@@ -4,7 +4,7 @@
 
 <% @projects.each do |project| %>
 	<p>
-		Title: <%= project.title %>
+		Title: <%= link_to project.title, project_path(project.id) %>
 		<br>
 		Description: <%= project.description %>
 		<br>
