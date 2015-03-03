@@ -6,9 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+User.destroy_all
+Project.destroy_all
+Reward.destroy_all
+Pledge.destroy_all
+Comment.destroy_all
+
 puts "\nCreating users..."
 10.times do
   User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "example",
   )
@@ -44,4 +54,31 @@ projects.each do |project|
 
     reward_amount = reward_amount * 2
   end
+<<<<<<< HEAD
 end
+=======
+end
+
+puts "\nCreating pledges..."
+200.times do
+  Pledge.create!(
+    user_id: User.all.sample.id,
+    reward_id: Reward.all.sample.id,
+    project_id: Project.all.sample.id
+  )
+  print "|"
+end
+
+puts "\nCreating comments..."
+100.times do 
+  the_user = User.all.sample
+  Comment.create!(
+    title: "Comment by " + the_user.first_name,
+    description: Faker::Lorem.paragraph,
+    user_id: the_user.id,
+    project_id: Project.all.sample.id
+  )
+  print "|"  
+end
+
+>>>>>>> 2987d8e68cb50f8196020cdac114d018d96171dc
