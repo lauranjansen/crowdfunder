@@ -19,9 +19,9 @@ puts "\nCreating projects..."
 20.times do
   Project.create!(
     title: Faker::Commerce.product_name,
-    text: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph,
     funding_goal: 1000 + rand(10000),
-    start_date: Faker::Time.between(2.days.age, Time.now, :all),
+    start_date: Faker::Time.between(2.days.ago, Time.now, :all),
     end_date: Faker::Time.forward(21, :all),
     owner_id: User.all.sample.id
   )
@@ -30,7 +30,7 @@ end
 
 puts "\nCreating rewards..."
 10.times do
-  Review.create!(
+  Reward.create!(
     title: Faker::Hacker.noun,
     description: Faker::Hacker.say_something_smart,
     amount: 10 + rand(1000),
