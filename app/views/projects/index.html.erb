@@ -15,14 +15,14 @@
 	</p>
 
 <% end %>
- 
-<%= # link_to "Login", new_session_path %>
- 
+
+<% #link_to "Login", new_session_path %>
+
 <% if current_user %>
-	<%= link_to "My Profile",  %>
+	<%= link_to "My Profile", new_project_path  %>
 	<%= link_to "Create a Project", new_project_path %>
 <% else %>
-<p>Please <%= link_to "log in", new_session_path %>.</p> 
+<p>Please</p><%= link_to "Log in", new_project_path %>
 <% end %> 
 
 
