@@ -1,0 +1,18 @@
+<h1>Welcome to Crowdfunder!</h1>
+
+<h3>Current Projects</h3>
+
+<% @projects.each do |project| %>
+	<p>
+		Title: <%= project.title %>
+		<br>
+		Description: <%= project.description %>
+		<br>
+		Funding goal: <%= project.funding_goal %>
+		<br>
+		Duration: <%= project.start_date %>  -  <%= project.end_date %>
+		<br>
+	</p>
+
+
+<% end %>
