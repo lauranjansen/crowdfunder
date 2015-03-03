@@ -8,6 +8,19 @@
 </head>
 <body>
 
+  <h1>Crowdfunder</h1>
+  
+  <nav class="nav">
+    <% if current_user %>
+      <p>Currently logged in as <%= current_user.email %></p>
+      <%= link_to "Logout", :logout, method: :post %>
+      <%= link_to "My Profile", new_user_path  %>
+      <%= link_to "Create a Project", new_project_path %>
+    <% else %>
+      <p>Please <%= link_to "log in", new_session_path %> or <%= link_to "sign up", new_user_path %>.</p> 
+    <% end %>
+  </nav>
+
   <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
   <% end %>
