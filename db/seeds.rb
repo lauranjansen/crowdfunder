@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
 User.destroy_all
 Project.destroy_all
 Reward.destroy_all
@@ -52,6 +54,9 @@ projects.each do |project|
 
     reward_amount = reward_amount * 2
   end
+<<<<<<< HEAD
+end
+=======
 end
 
 puts "\nCreating pledges..."
@@ -76,3 +81,4 @@ puts "\nCreating comments..."
   print "|"  
 end
 
+>>>>>>> 2987d8e68cb50f8196020cdac114d018d96171dc
