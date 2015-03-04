@@ -5,6 +5,10 @@
 <%= @project.funding_goal%>
 <br><%= @project.start_date %>, <%= @project.end_date %>
 
+<h3> Rewards </h3>
+
+<%= render 'rewards' %>
+
 <%= link_to 'Back to Projects', projects_path %>
 
 <% if current_user.id == @project.owner_id %>
