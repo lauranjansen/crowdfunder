@@ -60,7 +60,7 @@ end
 puts "\nCreating pledges..."
 200.times do
   Pledge.create!(
-    user_id: User.all.sample.id,
+    backer_id: User.all.sample.id,
     reward_id: Reward.all.sample.id,
     project_id: Project.all.sample.id
   )

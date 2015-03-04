@@ -3,7 +3,7 @@ class AddsTheRelationshipsWeForgot < ActiveRecord::Migration
     add_reference :comments, :user, index: true
     add_reference :comments, :project, index: true
 
-    add_reference :pledges, :user, index: true
+    add_reference :pledges, :backer, index: true
     add_reference :pledges, :reward, index: true
     add_reference :pledges, :project, index: true
 

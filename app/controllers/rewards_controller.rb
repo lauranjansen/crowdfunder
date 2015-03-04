@@ -1,11 +1,11 @@
 class RewardsController < ApplicationController
-before_filter :load_project
+  before_filter :load_project
   def show
     @reward = Reward.find(params[:id])
   end
 
   def create
-    @reward = @product.rewards.build(reward_params)
+    @reward = @project.rewards.build(reward_params)
     @reward.user = current_user
 
     if @reward.save
@@ -16,6 +16,8 @@ before_filter :load_project
   end
 
   def destroy
+    @reward = Reward.find(params[:id])
+    @reward.destroy
   end
 
   private

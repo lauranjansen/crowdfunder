@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require cocoon
 //= require turbolinks
+//= require flip.js
 //= require_tree .

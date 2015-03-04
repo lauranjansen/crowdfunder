@@ -7,11 +7,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(
-      title: "Comment by " + current_user.first_name,
+    @comment = @project.comments.build(
+      title: "Comment by #{current_user.first_name}",
       description: params[:comment][:description],
-      user_id: current_user_id,
-      project_id: @project.id
+      user: current_user
     )
 
     respond_to do |format|
