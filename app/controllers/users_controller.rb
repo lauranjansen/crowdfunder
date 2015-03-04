@@ -16,7 +16,9 @@ class UsersController < ApplicationController
 	end
 
 	def show
-
+		@user = User.find(params[:id])
+		@owned_projects = Project.where("owner_id = ?", current_user.id)
+		@backed_projects = Project.where("backer_id = ?", current_user.id)
 	end
 
 	private
