@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+	skip_before_filter :require_login, only: [:index]
+
 	def index
 		@projects = Project.all
 	end
@@ -22,8 +24,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    #put ensured login here#
-    @project = Project.find(params[:id])
+  	if project_owner?
+    	@project = Project.find(params[:id])
+    else
+    	redirect_to project_path, notice: 'Hands off!'
+    end
   end
 
   def destroy
@@ -35,6 +40,10 @@ class ProjectsController < ApplicationController
   private
   def project_params
     params.require(:project).permit(:title, :description, :funding_goal, :start_date, :end_date)
+  end
+
+  def project_owner?
+  	current_user.id == Project.find(params[:id]).owner_id
   end
 
 end
