@@ -6,4 +6,6 @@
 <br><%= @project.start_date %>, <%= @project.end_date %>
 
 <%= link_to 'Back to Projects', projects_path %>
+<% if current_user %>
 <%= link_to 'Edit this Project', edit_project_path %>
+<% end %>

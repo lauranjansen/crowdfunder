@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    #put ensured login here#
     @project = Project.find(params[:id])
   end
 

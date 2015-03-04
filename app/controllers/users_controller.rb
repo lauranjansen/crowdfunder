@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			redirect_to projects_url, notice: "Sweet! Welcome!" #
+			redirect_to projects_url, notice: "Sweet! Welcome!"
 		else
 			render :new
 		end
