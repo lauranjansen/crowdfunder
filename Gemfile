@@ -30,6 +30,8 @@ gem 'sorcery'
 # Use Bootstrap for styling
 gem 'bootstrap-sass'
 
+gem 'cocoon'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
