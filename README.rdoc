@@ -1,28 +1,82 @@
+== TO DO
+
+* Create reward framework
+* Use Cocoon for adding rewards to projects
+* Make pledges work
+* Discuss authorization
+
+* Add owner namespace if it makes sense
+
+* Add categories
+
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Kickstarter clone in Ruby on Rails, first iteration.
 
-Things you may want to cover:
+== User Stories
 
-* Ruby version
+= Iteration 1
 
-* System dependencies
+As a Project Owner, I want to be able to create a new project with a title and a description
+As a Project Owner, I want to set a goal for my project
+As a Project Owner, I want to set a funding period (start date, finish date) for my project
+As a Project Owner, I want the ability to set funding rewards with a description of what backers will receive for each reward
+As a Backer, I want to be able to back a project at a certain reward
+should be able to click on a reward and have it submitted with no page refresh
+once submitted, upon success, the amount raised should update
 
-* Configuration
+= Iteration 2
 
-* Database creation
+As a Project Owner, I want to see how many days are left before my project is done
+As a Backer, When viewing a project, it should be very clear whether I have backed the project or not
+As a Project Owner, I want to see the total amount of money raised as of right now
+As a Backer, I want to see all of the projects that I have backed
+As a Backer, I want to see the total amount of money I have spent on projects
 
-* Database initialization
+= Iteration 3
 
-* How to run the test suite
+As a Project Owner, To help people find my project, I want the ability to add it to a category
+As a Project Owner, To help people find my project, I want the ability to add various tags to my project
+As a Backer, I want to be able to see all projects in a particular category
+use infinite scrolling
+As a Backer, I want the ability to see all the projects associated with a particular tag
+use infinite scrolling
+As a Backer, I want to see who the owner of a project is
 
-* Services (job queues, cache servers, search engines, etc.)
+= Iteration 4
 
-* Deployment instructions
+As a Backer, I want to be able to leave comments on a project
+The comment should be submitted via AJAX
+As a Backer, I want the ability to leave comments on a project owner
+The comment should be submitted via AJAX
 
-* ...
+= Iteration 5
 
+As a Project Owner, I want to see how many people have funded my project at each reward
+As a Backer, I want to be notified when any projects I am backing meet their goal and are fully funded
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+= Story Backlog
+
+As a user, I would like to see how many projects have been successfully funded
+As a user, I would like to see how many total people have funded projects
+As a user, I would like to see how many projects have been funded in a particular category
+As a user, I would like to see how much money has been raised in total
+As a user, I would like to see how much money has been raised for a particular category
+As a user, I would like to see the percentage of funded versus failed projects
+As a user, I want the ability to sign in/up with Crowdfunder using my gmail or Facebook account
+As a Project Owner, I want the ability to add updates my project
+As a Project Owner, I want the ability to notify people that I have added an update
+As a Project Owner, I would like the ability to set limits on how many people can fund at certain rewards
+As a Project Owner, I want to have some method of contacting backers individually
+As a Project Owner, I want to have some method of contacting all of my backers as a group
+As a Project Owner, I want to have a bio section where people can look me up and see all the projects I have created
+
+== JavaScript/AJAX
+
+Listed below are some of the areas of the application in which JavaScript and/or AJAX is to be used. Feel free to use JS in other areas of your application if you feel that it would be useful (or fun).
+When a backer funds a project, there should be a nice highlighted flash message that appears at the top of the screen and fades out after 20 seconds or so
+backing a project should be AJAX and not require a page refresh
+Leaving a comment for a project should involve AJAX
+After someone backs a project, the metrics (how many backers there are, how many backers at the rewards, etc) should update without needing a page refresh
+listing of comments, and backers, should use infinite scrolling instead of paging
+When searching for a project by name, the app should use autocomplete/typeahead
