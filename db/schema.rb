@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20150303214303) do
   create_table "pledges", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
+    t.integer  "backer_id"
     t.integer  "reward_id"
     t.integer  "project_id"
   end
 
+  add_index "pledges", ["backer_id"], name: "index_pledges_on_backer_id"
   add_index "pledges", ["project_id"], name: "index_pledges_on_project_id"
   add_index "pledges", ["reward_id"], name: "index_pledges_on_reward_id"
-  add_index "pledges", ["user_id"], name: "index_pledges_on_user_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
