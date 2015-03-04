@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Bootstrap for styling
+gem 'bootstrap-sass'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
