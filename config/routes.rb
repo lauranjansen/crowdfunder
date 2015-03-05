@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     
   resources :users
   resources :sessions
+  resources :pledges, only: [:create]
 
   get 'login' => 'sessions#new', as: :login
   post 'logout' => 'sessions#destroy', as: :logout

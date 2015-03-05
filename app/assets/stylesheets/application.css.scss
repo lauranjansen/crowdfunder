@@ -1,3 +1,4 @@
+//= require_tree .
 @import "bootstrap";
 
 body {
@@ -15,7 +16,6 @@ a#no-hover:hover {
 }
 
 .card {
-  border: black 1px solid;
 }
 
 .flip {
