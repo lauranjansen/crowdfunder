@@ -1,10 +1,19 @@
-<div class='card'>
-  <div class ="front">
-    <p><%= reward.title %><br>
-    <%= reward.description %>
-    <%= reward.amount %></p>
+<button>
+<div class="card">
+  <div class="front">
+      <p>
+        <%= reward.title %><br>
+        <%= reward.description %>
+        <%= reward.amount %>
+      </p>
   </div>
-  <div class ="back">
-  You have pledged <%= reward.amount %>!
+  <div class="back">
+    <h1>Pledge for <%= reward.title %></h1>
+    <%= form_tag pledges_path, method: 'post', class: "pledge-form" do %>
+      <%= hidden_field_tag 'pledge[reward_id]', reward.id %>
+      <%= hidden_field_tag 'project_id', @project.id %>
+      <!-- <%= submit_tag 'Pledged this reward' %> -->
+    <% end %>
   </div>
 </div>
+</button>
