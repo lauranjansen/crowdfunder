@@ -1,5 +1,7 @@
 <h1><%= @user.first_name%> <%= @user.last_name %>'s Profile</h1>
 
+<%= image_tag(@user.avatar_url) %>
+
 <h2>Projects Created</h2>
 <% @owned_projects.each do |project| %>
 	<div>
