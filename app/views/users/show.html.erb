@@ -1,10 +1,19 @@
 <h1><%= @user.first_name%> <%= @user.last_name %>'s Profile</h1>
+
 <h2>Projects Created</h2>
 <% @owned_projects.each do |project| %>
-<%= link_to project.title, project_path(project.id) %>
+	<div>
+		<h3><%= link_to project.title, project_path(project.id) %></h3>
+		<p><%= project.description %></p>
+		<p>Funding goal: <%= project.funding_goal %></p>
+	</div>
 <% end %>
 
 <h2>Projects Backed</h2>
 <% @backed_projects.each do |project| %>
-<%= link_to project.title, project_path(project.id) %>
+	<div>
+		<h3><%= link_to project.title, project_path(project.id) %></h3>
+		<p><%= project.description %></p>
+		<p>Funding goal: <%= project.funding_goal %></p>
+	</div>
 <% end %>
