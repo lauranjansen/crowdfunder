@@ -21,6 +21,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+
+     if current_user
+      @comment= @project.comments.build
+    end
   end
 
   def edit

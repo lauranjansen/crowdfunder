@@ -10,7 +10,14 @@
   <%= render partial: 'reward', collection: @project.rewards %>
 </div>
 
-<%= render 'comments' %>
+<h3> Add a Comment </h3>
+
+<%= render 'comment_form' %>
+
+<h3> Comments <h3>
+<div id="show-comments">
+<%= render partial: 'comment', collection: @project.comments %>
+</div>
 
 <%= link_to 'Back to Projects', projects_path %>
 
