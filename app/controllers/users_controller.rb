@@ -18,7 +18,11 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@owned_projects = Project.where("owner_id = ?", current_user.id)
-		@backed_projects = Pledge.where("backer_id = ?", current_user.id)
+		pledges = Pledge.where("backer_id = ?", current_user.id)
+		@backed_projects = []
+		pledges.each do |pledge|
+			@backed_projects << Project.find(pledge.project_id)
+		end
 	end
 
 	private
