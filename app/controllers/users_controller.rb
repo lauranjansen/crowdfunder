@@ -16,11 +16,13 @@ class UsersController < ApplicationController
 	end
 
 	def show
-
+		@user = User.find(params[:id])
+		@owned_projects = Project.where("owner_id = ?", current_user.id)
+		@backed_projects = Pledge.where("backer_id = ?", current_user.id)
 	end
 
 	private
 	def user_params
-		params.require(:user).permit(:email, :password, :password_confirmation)
+		params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
 	end
 end
