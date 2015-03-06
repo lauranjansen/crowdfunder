@@ -8,10 +8,6 @@ $(document).ready(function() {
     $('.back').click(function(e){
       form = $(e.currentTarget).find('.pledge-form');
       form.submit();
-    });
-
-    $('.pledge-form').on('submit', function(e){
-      e.preventDefault();
-      console.log('Working');
+      console.log('Worked');
     });
   });
