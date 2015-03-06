@@ -1,0 +1,11 @@
+<% @project.comments.each do |comment| %>
+  <% if comment.id %>
+    <div>
+      <%= comment.title %>
+      <div>
+        <%= comment.description %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
