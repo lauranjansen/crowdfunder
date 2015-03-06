@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
+  mount_uploader :avatar, AvatarUploader
 
   validates :password, length: { minimum: 3 }
   validates :password, confirmation: true
