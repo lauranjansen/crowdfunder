@@ -5,7 +5,7 @@ $(document).ready(function() {
       reverse: true
     });
 
-    $('.back').click(function(e){
+    $('.back').on('click', function(e){
       form = $(e.currentTarget).find('.pledge-form');
       form.submit();
       console.log('Worked');
