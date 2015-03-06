@@ -17,8 +17,8 @@
 <% end %>
 
 <h3> Comments <h3>
-<div id="show-comments">
-<%= render partial: 'comment', collection: @project.comments %>
+<div id="comment-list">
+  <%= render :partial => 'comments' %>
 </div>
 
 <%= link_to 'Back to Projects', projects_path %>
@@ -27,3 +27,19 @@
     <%= link_to 'Edit this Project', edit_project_path %>
   <% end %>
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $("#new_comment")
+      .on('ajax:beforeSend', function() { // set this code to happen just before the ajax request is made
+        $("input[type='submit']") // make changes to the submit button
+          .val('Saving...') // change the text on the button
+          .attr('disabled', 'disabled'); // disable the button
+      })
+      .on('ajax:complete', function() {
+        $("input[type='submit']")
+          .val("Add Comment")
+          .removeAttr('disabled');
+      });
+  });
+</script>

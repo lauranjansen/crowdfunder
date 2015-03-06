@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require cocoon
-//= require turbolinks
-//= require flip.js
+//require turbolinks
 //= require_tree .
