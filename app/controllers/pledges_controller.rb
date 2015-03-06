@@ -7,7 +7,7 @@ class PledgesController < ApplicationController
 
 
     if @pledge.save
-      redirect_to project_path(@project.id)
+      redirect_to project_path(@project.id), notice: "Pledge Accepted!!"
     else
       render projects_path
     end
