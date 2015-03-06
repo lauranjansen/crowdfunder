@@ -59,10 +59,11 @@ end
 
 puts "\nCreating pledges..."
 200.times do
+  project = Project.all.sample
   Pledge.create!(
-    backer_id: User.all.sample.id,
-    reward_id: Reward.all.sample.id,
-    project_id: Project.all.sample.id
+    backer: User.all.sample,
+    project: project,
+    reward: project.rewards.sample
   )
   print "|"
 end
