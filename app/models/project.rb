@@ -6,4 +6,8 @@ class Project < ActiveRecord::Base
   has_many :backers, through: :pledges, class_name: 'User'
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
+
+  def funding_total
+    pledges.map { |p| p.reward.amount }.reduce(:+)
+  end
 end
